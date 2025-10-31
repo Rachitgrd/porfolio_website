@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title -->
+    <title>Rachit Agrawal - ML Engineer & Data Scientist</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Portfolio of Rachit Agrawal, a passionate ML Engineer and Data Scientist specializing in Python, TensorFlow, and building scalable data-driven applications.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Font: Exo 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Apply the custom font */
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: #0a101f; /* Dark blue background */
+            color: #cdd6f4; /* Light text color */
+        }
+        
+        /* Custom gradient text */
+        .text-gradient {
+            background-image: linear-gradient(to right, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        /* --- Animation Styles --- */
+
+        /* Reveal-on-scroll base class */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        
+        /* Class added by JS when element is visible */
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero section load-in animation */
+        .load-in-hero {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSlideUp 0.8s ease-out forwards;
+            animation-delay: var(--delay, 0.2s);
+        }
+
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Staggered delay helpers */
+        [style*="--delay: 0"] { animation-delay: 0.2s; }
+        [style*="--delay: 1"] { animation-delay: 0.4s; }
+        [style*="--delay: 2"] { animation-delay: 0.6s; }
+        [style*="--delay: 3"] { animation-delay: 0.8s; }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-lg" style="background-color: #0a101fE6;">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="#home" class="text-2xl font-bold text-white transition-colors duration-300 hover:text-teal-400">
+                Rachit Agrawal
+            </a>
+            
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="#home" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Projects</a>
+                <!-- REPLACE THIS: Add your GDrive link -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Resume</a>
+                <a href="#contact" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-teal-500/30">
+                    Contact
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-teal-400">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-95">
+            <a href="#home" class="block text-gray-300 hover:text-teal-400 px-6 py-3">Home</a>
+            <a href="#about" class="block text-gray-300 hover:text-teal-400 px-6 py-3">About</a>
+            <a href="#skills" class="block text-gray-300 hover:text-teal-400 px-6 py-3">Skills</a>
+            <a href="#projects" class="block text-gray-300 hover:text-teal-400 px-6 py-3">Projects</a>
+            <!-- REPLACE THIS: Add your GDrive link -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="block text-gray-300 hover:text-teal-400 px-6 py-3">Resume</a>
+            <a href="#contact" class="block text-gray-300 hover:text-teal-400 px-6 py-3">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-6 pt-24" style="background: radial-gradient(circle, #1a233a 0%, #0a101f 70%);">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Social Links -->
+                <!-- REPLACE THESE: Add your actual social media profile links in href="#" -->
+                <div class="flex justify-center space-x-6 mb-4 load-in-hero" style="--delay: 0">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400 transition-transform duration-300 hover:scale-110" aria-label="WhatsApp">
+                        <i data-lucide="phone" class="w-6 h-6"></i> <!-- Using 'phone' as a proxy for WhatsApp contact -->
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400 transition-transform duration-300 hover:scale-110" aria-label="X (Twitter)">
+                        <i data-lucide="twitter" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://github.com/Rachit0610" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400 transition-transform duration-300 hover:scale-110" aria-label="GitHub">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rachit-agrawal-0610/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400 transition-transform duration-300 hover:scale-110" aria-label="LinkedIn">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 load-in-hero" style="--delay: 1">
+                    Rachit Agrawal
+                </h1>
+                <p class="text-2xl md:text-4xl font-semibold text-gradient mb-8 load-in-hero" style="--delay: 2">
+                    ML Engineer & Data Scientist
+                </p>
+                <div class="flex justify-center space-x-4 load-in-hero" style="--delay: 3">
+                    <a href="#projects" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-teal-500/30 transform hover:-translate-y-1">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold px-8 py-3 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-gray-600/30 transform hover:-translate-y-1">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-24 sm:py-32">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                    <!-- Profile Image -->
+                    <div class="lg:col-span-1 flex justify-center reveal-on-scroll">
+                        <div class="rounded-full w-64 h-64 lg:w-80 lg:h-80 overflow-hidden shadow-2xl" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">
+                            <!-- REPLACE THIS: Add 'my photo.jpg' to your project folder -->
+                            <img src="my photo.jpg" alt="Rachit Agrawal" class="w-full h-full object-cover" 
+                                 onerror="this.src='https://placehold.co/400x400/1a233a/cdd6f4?text=Rachit'; this.onerror=null;">
+                        </div>
+                    </div>
+                    
+                    <!-- About Text -->
+                    <div class="lg:col-span-2 text-left">
+                        <h2 class="text-4xl font-bold text-white mb-6 reveal-on-scroll">About Me</h2>
+                        <p class="text-lg text-gray-300 mb-6 leading-relaxed reveal-on-scroll">
+                            Aspiring ML Engineer and Python Developer with strong problem-solving and analytical skills. I'm passionate about building data-driven and scalable applications using Flask, Python, and Machine Learning.
+                        </p>
+                        <p class="text-lg text-gray-300 mb-6 leading-relaxed reveal-on-scroll">
+                            Currently a B.Tech student at GL Bajaj Institute of Technology and Management, I am dedicated to continuous learning through hands-on projects and real-world problem solving.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed reveal-on-scroll">
+                            Seeking an opportunity as a Data Science Intern or Machine Learning Intern to apply my technical and analytical skills in building innovative, data-centric solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 sm:py-32 bg-gray-900 bg-opacity-40">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl font-bold text-white text-center mb-16 reveal-on-scroll">My Technical Toolkit</h2>
+                
+                <!-- 
+                  REPLACE THIS: 
+                  Create images named exactly as below (e.g., 'data_analysis.jpg', 'python.jpg') 
+                  and place them in the same folder as this HTML file.
+                -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                    
+                    <!-- Skill Item: Data Analysis -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="data_analysis.jpg" alt="Data Analysis icon" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Data Analysis</span>
+                    </div>
+
+                    <!-- Skill Item: Deep Learning -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="deep_learning.jpg" alt="Deep Learning icon" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Deep Learning</span>
+                    </div>
+
+                    <!-- Skill Item: FastAPI -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="fastapi.jpg" alt="FastAPI logo" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">FastAPI</span>
+                    </div>
+                    
+                    <!-- Skill Item: Flask -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="flask.jpg" alt="Flask logo" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Flask</span>
+                    </div>
+
+                    <!-- Skill Item: Git & GitHub -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="github.jpg" alt="GitHub logo" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Git & GitHub</span>
+                    </div>
+                    
+                    <!-- Skill Item: Keras -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="keras.jpg" alt="Keras logo" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Keras</span>
+                    </div>
+
+                    <!-- Skill Item: Machine Learning -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="machine_learning.jpg" alt="Machine Learning icon" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Machine Learning</span>
+                    </div>
+
+                    <!-- Skill Item: Model Evaluation -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="model_evaluation.jpg" alt="Model Evaluation icon" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Model Evaluation</span>
+                    </div>
+
+                    <!-- Skill Item: Problem Solving -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="problem_solving.jpg" alt="Problem Solving icon" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Problem Solving</span>
+                    </div>
+                    
+                    <!-- Skill Item: Python -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="python.jpg" alt="Python logo" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Python</span>
+                    </div>
+
+                    <!-- Skill Item: Scikit-learn -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="scikitlearn.jpg" alt="Scikit-learn logo" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">Scikit-learn</span>
+                    </div>
+                    
+                    <!-- Skill Item: SQL -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="sql.jpg" alt="SQL logo" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">SQL</span>
+                    </div>
+                    
+                    <!-- Skill Item: TensorFlow -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
+                        <img src="tensorflow.jpg" alt="TensorFlow logo" class="w-14 h-14 mb-3 object-contain">
+                        <span class="text-lg font-semibold text-white">TensorFlow</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 sm:py-32">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl font-bold text-white text-center mb-16 reveal-on-scroll">My Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    
+                    <!-- Project 1: T20 Match Outcome Prediction -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-teal-500/20 reveal-on-scroll">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">T20 Match Outcome Prediction</h3>
+                            <p class="text-gray-400 mb-5">Built a predictive model to forecast T20 match results using player and match-level data. Processed historical datasets, engineered performance-based features, and applied regression and classification models.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
+                            </div>
+                            <!-- REPLACE THIS: Add your GitHub project link -->
+                            <a href="#" class="text-teal-400 hover:text-teal-300 font-semibold inline-flex items-center group">
+                                View on GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2: Customer Churn Rate Prediction -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-teal-500/20 reveal-on-scroll">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">Customer Churn Rate Prediction</h3>
+                            <p class="text-gray-400 mb-5">Developed a model to identify customers likely to churn using deep learning. Conducted data cleaning, feature selection, normalization, and model training with Keras Sequential API.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">TensorFlow</span>
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Keras</span>
+                            </div>
+                            <!-- REPLACE THIS: Add your GitHub project link -->
+                            <a href="#" class="text-teal-400 hover:text-teal-300 font-semibold inline-flex items-center group">
+                                View on GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Loan Eligibility Prediction -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-teal-500/20 reveal-on-scroll">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">Loan Eligibility Prediction</h3>
+                            <p class="text-gray-400 mb-5">Designed a classification model to predict loan approval decisions. Performed data preprocessing, encoding, and feature engineering. Trained and evaluated models using Logistic Regression and Decision Trees.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
+                            </div>
+                            <!-- REPLACE THIS: Add your GitHub project link -->
+                            <a href="#" class="text-teal-400 hover:text-teal-300 font-semibold inline-flex items-center group">
+                                View on GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: ML Weekly Challenge Series -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-teal-500/20 reveal-on-scroll">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-white mb-3">ML Weekly Challenge Series</h3>
+                            <p class="text-gray-400 mb-5">Initiated a personal ML learning series on LinkedIn to publish weekly hands-on projects. Focused on practical implementation of algorithms like KNN, Regression, and Data Analysis.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
+                                <span class="bg-teal-900 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">LinkedIn</span>
+                            </div>
+                            <!-- REPLACE THIS: Add your LinkedIn profile link -->
+                            <a href="#" class="text-teal-400 hover:text-teal-300 font-semibold inline-flex items-center group">
+                                View on LinkedIn <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 sm:py-32 text-center" style="background: radial-gradient(circle, #1a233a 0%, #0a101f 70%);">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-4xl font-bold text-white mb-6 reveal-on-scroll">Get In Touch</h2>
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed reveal-on-scroll">
+                    I'm currently seeking new opportunities and am always open to discussing new projects or ideas. Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+                <div class="reveal-on-scroll">
+                    <a href="mailto:agrawalrachit0610@gmail.com" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-10 py-4 rounded-lg text-xl transition-all duration-300 shadow-lg hover:shadow-teal-500/30 transform hover:-translate-y-1 inline-flex items-center">
+                        <i data-lucide="mail" class="w-6 h-6 mr-3"></i>
+                        Say Hello
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 bg-opacity-60">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; <span id="current-year"></span> Rachit Agrawal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </js>
+    
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            var icon = this.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // Re-render icons
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var menu = document.getElementById('mobile-menu');
+                var icon = document.querySelector('#mobile-menu-btn i');
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+    </script>
+    
+    <!-- Reveal-on-Scroll Animation Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const targets = document.querySelectorAll('.reveal-on-scroll');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: remove observer after animation to save resources
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null, // relative to the viewport
+                threshold: 0.1 // 10% of the item must be visible
+            });
+
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+        });
+    </script>
+
+    <!-- Current Year for Footer -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </CSS>
+</html>
+
